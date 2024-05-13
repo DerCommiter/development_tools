@@ -38,41 +38,41 @@ extract_files() {
             rm "$file" # Remove the .tar.gz file after extraction
         fi
     done
-
+    
     echo "Extraction complete."
 }
 
 create_exec_link() {
     local EXEC_PATH="$1"
     local LINK_NAME="$HOME/bin/$2"
-
+    
     # Check if the executable exists
     if [ ! -x "$EXEC_PATH" ]; then
         echo "Error: $EXEC_PATH is not an executable file."
         return 1
     fi
-
+    
     # Check if $HOME/bin directory exists, if not, create it
     if [ ! -d "$HOME/bin" ]; then
         mkdir -p "$HOME/bin"
     fi
-
+    
     # Check if the link already exists
     if [ -e "$LINK_NAME" ]; then
         echo "Error: $LINK_NAME already exists."
         return 1
     fi
-
+    
     # Create the symbolic link
     ln -s "$EXEC_PATH" "$LINK_NAME"
-
+    
     echo "Symbolic link created: $LINK_NAME"
 }
 
 check_home_bin_in_path() {
     # Get the value of the PATH variable
     local PATH_VAR="$PATH"
-
+    
     # Search for $HOME/bin/ in the PATH variable
     if [[ ":$path_var:" == *":$HOME/bin:"* ]]; then
         echo "$HOME/bin/ is already in the PATH variable."
@@ -98,6 +98,3 @@ create_exec_link "$DEST_DIR/VSCode-linux-x64/bin/code" code
 create_exec_link "$DEST_DIR/linux-amd64/helm" helm
 create_exec_link "$DEST_DIR/oc" oc
 create_exec_link "$DEST_DIR/argocd" argocd
-
-check_home_bin_in_path
-
