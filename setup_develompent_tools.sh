@@ -69,33 +69,6 @@ create_exec_link() {
     echo "Symbolic link created: $LINK_NAME"
 }
 
-create_exec_link() {
-    local EXEC_PATH="$1"
-    local LINK_NAME="$HOME/bin/$2"
-
-    # Check if the executable exists
-    if [ ! -x "$EXEC_PATH" ]; then
-        echo "Error: $EXEC_PATH is not an executable file."
-        return 1
-    fi
-
-    # Check if $HOME/bin directory exists, if not, create it
-    if [ ! -d "$HOME/bin" ]; then
-        mkdir -p "$HOME/bin"
-    fi
-
-    # Check if the link already exists
-    if [ -e "$LINK_NAME" ]; then
-        echo "Error: $LINK_NAME already exists."
-        return 1
-    fi
-
-    # Create the symbolic link
-    ln -s "$EXEC_PATH" "$LINK_NAME"
-
-    echo "Symbolic link created: $LINK_NAME"
-}
-
 check_home_bin_in_path() {
     # Get the value of the PATH variable
     local PATH_VAR="$PATH"
