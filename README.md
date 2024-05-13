@@ -7,11 +7,10 @@ Dieses Skript automatisiert die Einrichtung verschiedener Entwicklungstools auf 
    ```bash
    git clone https://github.com/DerCommiter/development_tools.git 
    
-2. **Die Ausführungsberechtigung für das Skript hinzufügen**
+2. **Die Ausführungsberechtigung für das Skript hinzufügen**:
    ```bash
    chmod +x dev_tools_setup.sh
    
-
 3. **Skript ausführen**:
    ```bash   
    ./dev_tools_setup.sh
