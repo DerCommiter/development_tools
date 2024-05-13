@@ -69,18 +69,6 @@ create_exec_link() {
     echo "Symbolic link created: $LINK_NAME"
 }
 
-check_home_bin_in_path() {
-    # Get the value of the PATH variable
-    local PATH_VAR="$PATH"
-    
-    # Search for $HOME/bin/ in the PATH variable
-    if [[ ":$path_var:" == *":$HOME/bin:"* ]]; then
-        echo "$HOME/bin/ is already in the PATH variable."
-    else
-        echo "$HOME/bin/ is not in the PATH variable. Please make sure to add it to your PATH variable"
-    fi
-}
-
 dev_tools_exists
 
 download $CODE_URL "code.tar.gz" $DEST_DIR
