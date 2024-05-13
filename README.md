@@ -3,17 +3,17 @@
 Dieses Skript automatisiert die Installation und Konfiguration verschiedener Entwicklungstools auf Ihrem System. Es ermöglicht eine schnelle Bereitstellung und Konfiguration von Tools, die für die Softwareentwicklung und das Arbeiten mit Container-Orchestrierungssystemen hilfreich sind.
 
 ## Verwendung
-1. **Skript herunterladen**: Laden Sie das Skript `dev_tools_setup.sh` herunter:
+1. **Skript herunterladen**: Laden Sie das Skript `setup_develompent_tools.sh` herunter:
    ```bash
    git clone https://github.com/DerCommiter/development_tools.git && cd development_tools
    
 2. **Die Ausführungsberechtigung für das Skript hinzufügen**:
    ```bash
-   chmod +x dev_tools_setup.sh
+   chmod +x setup_develompent_tools.sh
    
 3. **Skript ausführen**:
    ```bash   
-   ./dev_tools_setup.sh
+   ./setup_develompent_tools.sh
 
 ## Konfiguration:
 
